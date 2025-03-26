@@ -1,114 +1,318 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Georgia&family=Roboto:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cardápio - Pizzaria</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f8f8;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            background: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            text-align: left;
-        }
-        h1 {
-            color: #d32f2f;
-            text-align: center;
-        }
-        h2 {
-            background: #d32f2f;
-            color: white;
-            padding: 10px;
-            border-radius: 5px;
-            text-align: center;
-        }
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        li {
-            padding: 10px;
-            border-bottom: 1px solid #ddd;
-        }
-        li:last-child {
-            border-bottom: none;
-        }
-        .pizza-name {
-            font-weight: bold;
-        }
+      h2 {
+        position: relative;
+      }
+      h2::after {
+        content: "";
+        display: block;
+        width: 50px;
+        height: 3px;
+        background: #b71c1c; /* Vermelho escuro */
+        margin: 10px auto 0;
+        border-radius: 2px;
+      }
+      body {
+        font-family: "Roboto", sans-serif;
+      }
+      h1,
+      h2 {
+        font-family: "Georgia", serif;
+      }
+      body {
+        font-family: "Georgia", serif; /* Fonte mais elegante */
+        background-color: #fdfcf5; /* Fundo bege claro */
+        margin: 0;
+        padding: 0;
+        text-align: center;
+      }
+      .container {
+        max-width: 800px;
+        margin: 20px auto;
+        background: #ffffff; /* Fundo branco */
+        padding: 20px;
+        border-radius: 15px; /* Bordas mais arredondadas */
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Sombra mais elegante */
+        text-align: left;
+      }
+      h1 {
+        color: #b71c1c; /* Vermelho mais escuro */
+        font-size: 2.5em; /* Tamanho maior */
+        margin-bottom: 10px;
+      }
+      h2 {
+        background: #b71c1c; /* Vermelho escuro */
+        color: white;
+        padding: 10px;
+        border-radius: 10px;
+        text-align: center;
+        font-size: 1.5em;
+      }
+      h5 {
+        font-style: italic; /* Deixa o texto mais elegante */
+        color: #555; /* Cinza suave */
+        margin-bottom: 20px;
+      }
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      li {
+        border-bottom: 1px solid #eee; /* Linha mais suave */
+        font-size: 1.1em; /* Texto um pouco maior */
+        padding: 20px 10px; /* Mais espaçamento interno */
+        line-height: 1.6; /* Espaçamento entre linhas */
+      }
+      li:hover {
+        background-color: #f9f9f9; /* Fundo claro ao passar o mouse */
+        transform: scale(1.02); /* Leve aumento */
+        transition: all 0.3s ease; /* Transição suave */
+      }
+      li:last-child {
+        border-bottom: none;
+      }
+      .pizza-name {
+        font-weight: bold;
+        color: #333; /* Preto suave */
+      }
+      .new-item {
+        color: #388e3c; /* Verde escuro */
+        font-weight: bold;
+        font-size: 0.9em; /* Texto menor */
+        border: 1px solid #388e3c; /* Borda verde escura */
+        border-radius: 5px;
+        padding: 2px 6px;
+        display: inline-block;
+        margin-right: 5px;
+        box-shadow: 0px 2px 5px rgba(0, 128, 0, 0.2); /* Sombra verde clara */
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <h1>Cardápio Casa da Pizza</h1>
-        <h2>Pizzas Tradicionais</h2>
-        <h5>Obs: Todas as pizzas são preparadas com molho de tomate artesanal preparado na casa</h5>
-        <ul>
-            <li><span class="pizza-name">1. Alho e Óleo:</span> Muçarela, azeite e alho crocante, finalizado com um toque de orégano e azeitonas.</li>
-            <li><span class="pizza-name">2. Abobrinha Especial:</span> Calabresa ralada, abobrinha e provolone sobre muçarela mucarela temperados com alho crocante e orégano.</li>
-            <li><span class="pizza-name">3. Atum:</span> Atum sobre uma base de muçarela, com cebola, tomate e orégano.</li>
-            <li><span class="pizza-name">4. Aliche:</span> Muçarela e saborosas tiras de aliche, combinadas com orégano e azeitonas.</li>
-            <li><span class="pizza-name">5. Baiana:</span> Calabresa finamente ralada com pimenta especial e cebola, sobre uma camada de muçarela e orégano.</li>
-            <li><span class="pizza-name">6. Brócolis:</span>  Brócolis grelhado servido sobre muçarela, finalizado com alho crocante.</li>
-            <li><span class="pizza-name">7. Calabresa:</span> Generosas fatias de calabresa com cebola e orégano sobre muçarela derretida.</li>
-            <li><span class="pizza-name">8. Carne Seca:</span> Carne seca da casa, preparada com cebola sobre muçarela.</li>
-            <li><span class="pizza-name">9. Escarola:</span> Escarola refogada com bacon crocante, alho especial e muçarela.</li>
-            <li><span class="pizza-name">10. Romana:</span> Combinação refinada de atum, palmito, ovo e bacon sobre uma base de muçarela.</li>
-            <li><span class="pizza-name">11. Strogonoff:</span> Strogonoff de carne sobre muçarela e finalizado com batata palha.</li>
-            <li><span class="pizza-name">12. File Master:</span> Filé mignon grelhado com tomates frescos e cebola (opção com Catupiry).</li>
-            <li><span class="pizza-name">13. Frango:</span> Frango temperado com muçarela, tomate e orégano.</li>
-            <li><span class="pizza-name">14. Frango Catupiry:</span> Clássica combinação de frango desfiado com Catupiry e toque de tomate e orégano.</li>
-            <li><span class="pizza-name">15. Framilho:</span> Frango suculento com milho doce e bacon crocante.</li>
-            <li><span class="pizza-name">16. Gorgonzola:</span> Muçarela e gorgonzola, com orégano e azeitonas pretas.</li>
-            <li><span class="pizza-name">17. Lombo Cremoso:</span> Lombo defumado coberto com queijo cremoso.</li>
-            <li><span class="pizza-name">18. Lombo:</span> Lombo defumado fatiado sobre muçarela com orégano.</li>
-            <li><span class="pizza-name">19. Milho:</span> Milho salpicado com pedaços de bacon sobre muçarela.</li>
-            <li><span class="pizza-name">20. Marguerita:</span> Tomate cereja fresco com manjericão e muçarela especial.</li>
-            <li><span class="pizza-name">21. Mineira:</span> Lombo defumado, calabresa e bacon crocante com cebola e orégano.</li>
-            <li><span class="pizza-name">22. Muçarela:</span> A clássica combinação de muçarela derretida, tomate e orégano.</li>
-            <li><span class="pizza-name">23. Napolitana:</span> Parmesão e tomate fresco sobre uma base cremosa de muçarela.</li>
-            <li><span class="pizza-name">24. Palmito:</span> Palmito selecionado sobre muçarela, finalizado com tomate e orégano.</li>
-            <li><span class="pizza-name">25. Pepperoni:</span> Pepperoni especial levemente picante sobre muçarela cremosa.</li>
-            <li><span class="pizza-name">26. Portuguesa:</span> Presunto, ovo, ervilhas, palmito e cebola sobre uma base de muçarela.</li>
-            <li><span class="pizza-name">27. 3 Queijos:</span> Mistura equilibrada de muçarela, provolone e parmesão.</li>
-            <li><span class="pizza-name">28. 4 Queijos:</span> Combinação irresistível de muçarela, provolone, parmesão e Catupiry.</li>
-            <li><span class="pizza-name">29. Rúcula com Tomate Seco:</span> Rúcula fresca sobre muçarela, finalizada com tomate seco.</li>
-        </ul>
-        
-        <h2>Pizzas Especiais</h2>
-        <h5>Obs: Todas as pizzas são preparadas com molho de tomate artesanal preparado na casa</h5>
-        <ul>
-            <li><span class="pizza-name">30. Tomates Confitados:</span> Queijo cremoso, tomates confitados finalizados com Parmesão, manjericão e toque final com castanhas.</li>
-            <li><span class="pizza-name">31. Caprese:</span> Muçarela de búfala, molho pesto artesanal e finalizado com castanhas.</li>
-            <li><span class="pizza-name">32. Bonna:</span> Combinação de gorgonzola com figos laminados e nozes sobre muçarela.</li>
-            <li><span class="pizza-name">33. Champignon:</span> Cogumelos selecionados com parmesão e muçarela.</li>
-            <li><span class="pizza-name">34. Fratello:</span> Pera fatiada, alho-poró e gorgonzola, finalizados com nozes crocantes.</li>
-            <li><span class="pizza-name">35. Caponata Berinjela:</span> Caponata de berinjela com parmesão e nozes.</li>
-            <li><span class="pizza-name">36. Capadócia:</span> Peito de peru fatiado com alho-poró e cream cheese.</li>
-            <li><span class="pizza-name">37. Fiorella:</span> Palmito nobre e pimenta biquinho sobre muçarela.</li>
-            <li><span class="pizza-name">38. Capriccio:</span> Lombo defumado, alho-poró e gorgonzola com um toque cremoso de Catupiry.</li>
-            <li><span class="pizza-name">39. Geleia de Pimenta:</span> Presunto e muçarela com um toque sofisticado de geleia de pimenta e gorgonzola.</li>
-            <li><span class="pizza-name">40. Naturalle:</span> Brócolis com palmito, finalizado com alho crocante.</li>
-            <li><span class="pizza-name">41. Rúcula Especial:</span> Rúcula fresca sobre muçarela de búfala e gorgonzola, finalizada com mel e castanhas.</li>
-            <li><span class="pizza-name">42. Creme de Milho:</span> Muçarela, Creme de milho, frango temperado e finalizado com batata palha.</li>
-        </ul>
-        
-        <h2>Pizzas Doces</h2>
-        <ul>
-            <li><span class="pizza-name">43. Banana com Canela:</span> Tradicional combinação de banana e canela.</li>
-            <li><span class="pizza-name">44. Banoffee:</span> Banana, chocolate branco e catupiry gratinado.</li>
-            <li><span class="pizza-name">45. Charge:</span> Chocolate, amendoim e doce de leite.</li>
-        </ul>
+      <h1>Cardápio Casa da Pizza</h1>
+      <h2>Pizzas Tradicionais</h2>
+      <h5>
+        Obs: Todas as pizzas são preparadas com molho de tomate artesanal
+        preparado na casa
+      </h5>
+      <ul>
+        <li>
+          <span class="pizza-name">1. Alho e Óleo:</span> Muçarela, azeite e
+          alho crocante, finalizado com um toque de orégano e azeitonas.
+        </li>
+        <li>
+          <span class="pizza-name">2. Abobrinha Especial:</span> Calabresa
+          ralada, abobrinha e provolone sobre muçarela temperados com alho
+          crocante e orégano.
+        </li>
+        <li>
+          <span class="pizza-name">3. Atum:</span> Atum sobre uma base de
+          muçarela, com cebola, tomate e orégano.
+        </li>
+        <li>
+          <span class="pizza-name">4. Aliche:</span> Muçarela e saborosas tiras
+          de aliche, combinadas com orégano e azeitonas.
+        </li>
+        <li>
+          <span class="pizza-name">5. Baiana:</span> Calabresa ralada com
+          pimenta, cebola, sobre uma camada de muçarela e orégano.
+        </li>
+        <li>
+          <span class="pizza-name">6. Brócolis:</span> Brócolis grelhado servido
+          sobre muçarela, finalizado com alho crocante.
+        </li>
+        <li>
+          <span class="pizza-name">7. Calabresa:</span> Generosas fatias de
+          calabresa com cebola e orégano sobre muçarela.
+        </li>
+        <li>
+          <span class="pizza-name">8. Carne de Sol:</span> Combinação de Carne
+          de sol e cebola sobre muçarela.
+        </li>
+        <li>
+          <span class="pizza-name">9. Escarola:</span> Escarola refogada com
+          bacon crocante, alho e muçarela.
+        </li>
+        <li>
+          <span class="pizza-name">10. Romana:</span> Combinação de atum,
+          palmito, ovo e bacon sobre uma base de muçarela.
+        </li>
+        <li>
+          <span class="pizza-name">11. Strogonoff:</span> Strogonoff de carne
+          sobre muçarela e finalizado com batata palha.
+        </li>
+        <li>
+          <span class="pizza-name">12. File Master:</span> Filé mignon grelhado
+          com tomates frescos e cebola (opção com Catupiry).
+        </li>
+        <li>
+          <span class="pizza-name">13. Frango:</span> Frango temperado com
+          muçarela, tomate e orégano.
+        </li>
+        <li>
+          <span class="pizza-name">14. Frango Catupiry:</span> Clássica
+          combinação de frango desfiado com Catupiry e tomate e orégano.
+        </li>
+        <li>
+          <span class="pizza-name">15. Framilho:</span> Frango com milho e bacon
+          crocante sobre muçarela.
+        </li>
+        <li>
+          <span class="pizza-name">16. Gorgonzola:</span> Combinação de muçarela
+          e gorgonzola, com orégano e azeitonas pretas.
+        </li>
+        <li>
+          <span class="pizza-name">17. Lombo Cremoso:</span> Lombo defumado
+          coberto com queijo cremoso sobre muçarela.
+        </li>
+        <li>
+          <span class="pizza-name">18. Lombo:</span> Lombo defumado fatiado
+          sobre muçarela com orégano.
+        </li>
+        <li>
+          <span class="pizza-name">19. Lombo Catupiry:</span> Lombo defumado
+          fatiado com Catupiry sobre muçarela com orégano.
+        </li>
+        <li>
+          <span class="pizza-name">20. Milho:</span> Milho salpicado com pedaços
+          de bacon sobre muçarela.
+        </li>
+        <li>
+          <span class="pizza-name">21. Marguerita:</span> Tomate cereja fresco
+          com manjericão e muçarela especial.
+        </li>
+        <li>
+          <span class="pizza-name">22. Mineira:</span> Lombo defumado,
+          calabresa, bacon crocante e cebola, sobre uma camada de muçarela e
+          orégano.
+        </li>
+        <li>
+          <span class="pizza-name">23. Muçarela:</span> A clássica combinação de
+          muçarela derretida, tomate e orégano.
+        </li>
+        <li>
+          <span class="pizza-name">24. Napolitana:</span> Parmesão e tomate
+          fresco sobre uma base de muçarela.
+        </li>
+        <li>
+          <span class="pizza-name">25. Palmito:</span> Palmito selecionado sobre
+          muçarela, finalizado com tomate e orégano.
+        </li>
+        <li>
+          <span class="pizza-name">26. Pepperoni:</span> Pepperoni especial
+          levemente picante sobre muçarela e orégano.
+        </li>
+        <li>
+          <span class="pizza-name">27. Portuguesa:</span> Presunto, ovo,
+          ervilhas, palmito e cebola sobre uma base de muçarela.
+        </li>
+        <li>
+          <span class="pizza-name">28. 3 Queijos:</span> Mistura equilibrada de
+          muçarela, provolone e parmesão.
+        </li>
+        <li>
+          <span class="pizza-name">29. 4 Queijos:</span> Combinação irresistível
+          de muçarela, provolone, parmesão e Catupiry.
+        </li>
+        <li>
+          <span class="pizza-name">30. Rúcula com Tomate Seco:</span> Rúcula
+          fresca sobre muçarela, finalizada com tomate seco.
+        </li>
+      </ul>
+
+      <h2>Pizzas Especiais</h2>
+      <h5>
+        Obs: Todas as pizzas são preparadas com molho de tomate artesanal
+        preparado na casa
+      </h5>
+      <ul>
+        <li>
+          <span class="new-item">Novidade!</span
+          ><span class="pizza-name">31. Tomates Confitados:</span> Queijo
+          cremoso, tomates confitados com Parmesão, manjericão e toque final com
+          castanhas.
+        </li>
+        <li>
+          <span class="new-item">Novidade!</span
+          ><span class="pizza-name">32. Caponata Berinjela:</span> Caponata de
+          berinjela com parmesão e nozes sobre muçarela.
+        </li>
+        <li>
+          <span class="pizza-name">33. Caprese:</span> Muçarela de búfala, molho
+          pesto artesanal e finalizado com castanhas.
+        </li>
+        <li>
+          <span class="pizza-name">34. Bonna:</span> Combinação de gorgonzola
+          com figos laminados e nozes sobre muçarela.
+        </li>
+        <li>
+          <span class="pizza-name">35. Champignon:</span> Cogumelos selecionados
+          com parmesão e muçarela.
+        </li>
+        <li>
+          <span class="pizza-name">36. Fratello:</span> Pera fatiada, alho-poró
+          e gorgonzola, finalizados com nozes crocantes sobre muçarela.
+        </li>
+        <li>
+          <span class="pizza-name">37. Capadócia:</span> Peito de peru fatiado
+          com alho-poró e cream cheese sobre muçarela.
+        </li>
+        <li>
+          <span class="pizza-name">38. Fiorella:</span> Palmito nobre e pimenta
+          biquinho sobre muçarela.
+        </li>
+        <li>
+          <span class="pizza-name">39. Capriccio:</span> Lombo defumado,
+          alho-poró e gorgonzola com um toque cremoso de Catupiry sobre
+          muçarela.
+        </li>
+        <li>
+          <span class="pizza-name">40. Geleia de Pimenta:</span> Presunto e
+          muçarela com um toque sofisticado de geleia de pimenta e gorgonzola.
+        </li>
+        <li>
+          <span class="pizza-name">41. Naturalle:</span> Brócolis com palmito e
+          muçarela, finalizado com alho crocante.
+        </li>
+        <li>
+          <span class="pizza-name">42. Rúcula Especial:</span> Rúcula fresca
+          sobre muçarela de búfala e gorgonzola, finalizada com mel e castanhas.
+        </li>
+        <li>
+          <span class="pizza-name">43. Creme de Milho:</span> Muçarela, creme de
+          milho, frango temperado e finalizado com batata palha.
+        </li>
+      </ul>
+
+      <h2>Pizzas Doces</h2>
+      <ul>
+        <li>
+          <span class="pizza-name">44. Banana com Canela:</span> Tradicional
+          combinação de banana e canela.
+        </li>
+        <li>
+          <span class="pizza-name">45. Banoffee:</span> Banana, chocolate branco
+          e catupiry gratinado.
+        </li>
+        <li>
+          <span class="pizza-name">46. Charge:</span> Chocolate, amendoim e doce
+          de leite.
+        </li>
+      </ul>
     </div>
-</body>
+  </body>
+
+  <footer style="margin-top: 20px; font-size: 0.9em; color: #777">
+    <p>© 2025 Casa da Pizza.</p>
+  </footer>
 </html>
